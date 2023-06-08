@@ -18,17 +18,22 @@
 	<!--------header---->
 	<header>
 		<a href="#" class="logo"><img src=""></a>
-		<div class="bx bx-menu" id="menu-icon"></div>
 
 		<ul class="navlist">
-			<li><a href="#Home">Home</a></li>
-			<li><a href="#About">About</a></li>
-			<li><a href="#Portfolio">Portfolio</a></li>
-			<li><a href="#Service">Service</a></li>
-			<li><a href="#Contact">Contact</a></li>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about">About</a></li>
+			<li><a href="#portfolio">Portfolio</a></li>
+			<li><a href="#service">Service</a></li>
+			<li><a href="#contact">Contact</a></li>
 		</ul>
+		
+		<!-- <div class="bx bx-menu" id="menu-icon"></div> -->
+
 		<a href="Asset/Images/my-CV.pdf" class="top-btn">Download CV</a>
+		<i class='bx bx-x' onclick="closemenu()"></i>
+		<i class='bx bx-menu' onclick="openmenu()"></i>
 	</header>
+	
 
 	<!--------home---->
 	<section class="home" id="home">
@@ -177,28 +182,25 @@
 			<div class="rw">
 				<div class="contact-left">
 				<h3 class="sub-title">Contact Me</h3>
-				<p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-send-fill" viewBox="0 0 16 16">
-					<path d="M15.964.686a.5.5 0 0 0-.65-.65L.767 5.855H.766l-.452.18a.5.5 0 0 0-.082.887l.41.26.001.002 4.995 3.178 3.178 4.995.002.002.26.41a.5.5 0 0 0 .886-.083l6-15Zm-1.833 1.89L6.637 10.07l-.215-.338a.5.5 0 0 0-.154-.154l-.338-.215 7.494-7.494 1.178-.471-.47 1.178Z"/>
-				  </svg>jebetjackline@86.gmail.com</p>
-                <p><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
-					<path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
-				  </svg>0714583006</p>
+				<p><i class='bx bx-paper-plane'></i>jebetjackline@86.gmail.com</p>
+                <p><i class='bx bx-phone'></i>0714583006</p>
 				<!-- <h3>Let's have a chat</h3> -->
 				<!-- <p>Send me an email</p> -->
 				<div class="social">
-					<a href=""><i class='bx bxl-instagram'></i></a>
-					<a href=""><i class='bx bxl-facebook'></i></a>
-					<a href=""><i class='bx bxl-whatsapp'></i></a>
-					
+					<a href=""><i class='bx-fw bx bxl-slack'></i></a>
+					<a href="https://api.whatsapp.com/send?phone=254724139044"><i class='bx-fw bx bxl-whatsapp'></i></a>
+					<a href=""><i class='bx-fw bx bxl-instagram'></i></a>
+					<a href=""><i class='bx-fw bx bxl-facebook'></i></a>
 				</div>
 			  </div>
 			<div class="contact-right">
-				<form>
+				<form name="submit-to-google-sheet">
 					<input type="text" name="Name" placeholder="Your Name" required>
 					<input type="email" name="Email" placeholder="Your email" required>
-					<textarea name="Meassage" rows="6" placeholder="Your Message"></textarea>
+					<textarea name="Message" rows="6" placeholder="Your Message"></textarea>
 					<input type="submit" class="top-btn" name="submit" value="Submit">
 				</form>
+				<span id="msg">hello</span>
 			  </div>
 			</div>
 		</div>
@@ -212,13 +214,45 @@
 
 	<!--------ends---->
 	<div class="ends">
-		<p>copyright © Jackline Jebet.</p>
+		<p>copyright © 2023. Made with <i class='bx bxs-heart bx-border-circle'></i> by Jackline Jebet.</p>
+		<p>All rights reserved</p>
 	</div>
 
-	<script src="./Assets/javascript/script.js"></script>
+	<script>
+		var sidemenu = document.getElementById("sidemenu");
+		
+		function openmenu(){
+	sidemenu.style.right = "0"
+}
+        function closemenu(){
+	sidemenu.style.right = "-200px"
+}
+	</script>
+
+<script>
+		const scriptURL = 'https://script.google.com/macros/s/AKfycbzavfcGUgRb_cedzijb1aaup2VM_Fg_p0KiyY9_3ctV_bFsX1K5K2Ud8SFqSfH7MtFfCQ/exec'
+		const form = document.forms['submit-to-google-sheet']
+		const msg = document.getElementById("msg")
+	  
+		form.addEventListener('submit', e => {
+		  e.preventDefault()
+		  fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+			.then(response => {
+				msg.innerHTML = "Message sent successfully"
+				setTimeout(function(){
+					msg.innerHTML = ""
+				},5000)
+				form.reset()
+			})
+			.catch(error => console.error('Error!', error.message))
+		})
+	  </script>
+
+	<script src="./Asset/javascript/script.js"></script>
 
 	<!--------Link to js---->
 	<script type="text/javascript" src="js/script.js"></script>
+	
 	
 </body>
 </html>

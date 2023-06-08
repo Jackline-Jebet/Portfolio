@@ -73,14 +73,6 @@
  	width: 100%;
  }
 
- #menu-icon {
- 	font-size: 35px;
- 	color: var(--text-color);
- 	z-index: 10001;
- 	cursor: pointer;
- 	display: none;
- }
-
  .top-btn {
  	display: inline-block;
  	padding: 9px 30px;
@@ -161,6 +153,7 @@
  	color: var(--bg-color);
  	margin-right: 22px;
  	margin-bottom: 30px;
+	margin-top: 20px;
  }
 
  .social a:hover {
@@ -509,7 +502,7 @@
  .contact-left p{
     margin-top: 20px;
  }
- .contact-left p svg{
+ .contact-left p i{
 	color: #f75124;
 	margin-right: 15px;
 	font-size: 25px;
@@ -568,6 +561,9 @@
  	font-size: var(--p-font);
  	letter-spacing: 1px;
  }
+ .ends i{
+	color: #f75023;
+ }
 
  @media (max-width: 1425px) {
  	header {
@@ -599,7 +595,7 @@
  }
 
  @media (max-width: 970px) {
- 	#menu-icon {
+ 	header .bx{
  		display: block;
  	}
 
@@ -680,6 +676,26 @@
  	}
  }
 
- @media (max-width: 540px) {
+ header .bx{
+	display: none;
+ }
+
+ @media (max-width: 600px) {
  	.contact .action form input[type="email"] width: 310px;
+
+	 header .bx{
+	   font-size: 25px;
+	   position: block;
+	   margin-top: 0;
+	   /* margin-left: 25px; */
+		/* color: var(--text-color); */
+		z-index: 10001;
+		cursor: pointer;
+		display: block;
+	}
+ }
+ #msg{
+	color: #61b752;
+	margin-top: -10px;
+	display: block;
  }
