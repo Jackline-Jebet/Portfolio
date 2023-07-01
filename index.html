@@ -6,8 +6,7 @@
 	<title>Jackline|Portfolio</title>
 	<link rel="stylesheet" type="text/css" href="./Asset/css/style.css">
 
-	<link rel="stylesheet"
-  href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+	<link rel="stylesheet"href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +17,8 @@
 	<!--------header---->
 	<header>
 		<a href="#" class="logo"><img src=""></a>
-
+		<div id="navLinks">
+		
 		<ul class="navlist">
 			<li><a href="#home">Home</a></li>
 			<li><a href="#about">About</a></li>
@@ -28,10 +28,13 @@
 		</ul>
 		
 		<!-- <div class="bx bx-menu" id="menu-icon"></div> -->
+	
+	    <i class='bx bx-x' onclick="closemenu()"></i>
 
-		<a href="Asset/Images/Jackline_Jebet_Resume.pdf" class="top-btn">Download CV</a>
-		<i class='bx bx-x' onclick="closemenu()"></i>
 		<i class='bx bx-menu' onclick="openmenu()"></i>
+	</div>
+	<a href="Asset/Images/Jackline_Jebet_Resume.pdf" class="top-btn">Download CV</a>
+	
 	</header>
 	
 
@@ -190,6 +193,8 @@
 			<div class="rw">
 				<div class="contact-left">
 				<h3 class="sub-title">Contact Me</h3>
+				<p><i class='bx bx-user'></i>Jackline Jebet</p>
+                <p><i class='bx bx-current-location'></i>Nairobi-Kenya</p>
 				<p><i class='bx bx-paper-plane'></i>jebetjackline@86.gmail.com</p>
                 <p><i class='bx bx-phone'></i>0714583006</p>
 				<!-- <h3>Let's have a chat</h3> -->
@@ -227,13 +232,13 @@
 	</div>
 
 	<script>
-		var sidemenu = document.getElementById("sidemenu");
+		var navList = document.getElementById("navList");
 		
 		function openmenu(){
-	sidemenu.style.right = "0"
+	navLinks.style.width = "100%"
 }
         function closemenu(){
-	sidemenu.style.right = "-200px"
+	navLinks.style.width = "0"
 }
 	</script>
 
